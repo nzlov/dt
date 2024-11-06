@@ -5,6 +5,8 @@ import "github.com/nzlov/utils"
 type Config struct {
 	utils.BaseConfig
 
+	Size  int    `json:"size" yaml:"size" mapstructure:"size"`
+	Bg    int    `json:"bg" yaml:"bg" mapstructure:"bg"`
 	Img   string `json:"img" yaml:"img" mapstructure:"img"`
 	Tmpls []Tmpl `json:"tmpls" yaml:"tmpls" mapstructure:"tmpls"`
 }
