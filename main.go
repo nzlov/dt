@@ -28,7 +28,16 @@ func main() {
 	}
 
 	size := 3
+	if cfg.Size != 0 {
+		size = cfg.Size
+	}
 	bg := 2
+	if cfg.Bg != 0 {
+		bg = cfg.Bg
+	}
+	if bg >= size {
+		bg = size - 1
+	}
 
 	vs, err := prominentcolor.KmeansWithAll(size, i, prominentcolor.ArgumentNoCropping, uint(i.Bounds().Dx()), nil)
 	if err != nil {
